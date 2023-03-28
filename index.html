@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Top 50 Books</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+     <div class="container">
+         <h1>Books Recommendation System</h1>
+         <p>Popularity Base Recommendation System</p>
+         <div class="row">
+             {% for book in books %}
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                  <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" src="{{ book['image_url-M'] }}">
+                    <div style="background:black;color:white;" class="card-body">
+                      <h5 class="card-title">Book Title:  {{ book['Book-Title'] }}</h5>
+                      <p class="card-text">Ratings : {{ book['num-ratings'] }}</p>
+                      <p class="card-text">Average : {{ book['avg-ratings'] }}</p>
+                    </div>
+                  </div>
+                </div>
+             {% endfor %}
+         </div>
+     </div>
+  </body>
+</html>
